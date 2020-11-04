@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Almacen IKEA</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="branding">IKEA</h1>
+        <nav class="nav-bar">
+            <ul>
+                <li class="active"><a href="#">Inicio</a></li>
+                <li><a href="./cesta.html">Cesta</a>
+                    <span id="contador" class="unidades"></span>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!--  BUSCAR PRODUCTO  -->
+        <div class="formulario">
+            <h3>Busca un producto</h3>
+            <div class="inline">
+                <input id="productoBuscar" type="text" placeholder="Busca un producto" />
+                <button onclick="buscarProducto()">BUSCAR</button>
+            </div>
+        </div>
+
+        <!--  AÑADIR PRODUCTO  -->
+        <div class="formulario">
+            <h3>Añade un producto</h3>
+            <!--  <select onchange="manageChange(event)"> -->
+            <div class="inline row">
+                <select id="categorias">
+                    <option value="armarios">Armarios</option>
+                    <option value="mesas">Mesas</option>
+                    <option value="sillas">Sillas</option>
+                </select>
+                <input id="nombreProducto" type="text" placeholder="nombre" />
+                <input id="precioProducto" type="text" placeholder="Precio" />
+                <input id="fotoProducto" type="file" placeholder="foto" />
+            </div>
+            <div class="row">
+                <textarea id="descripcionProducto" name="textarea" rows="5" cols="50">Descripción del producto</textarea>
+            </div>
+            <button onclick="addProducto()">AÑADIR PRODUCTO</button>
+        </div>
+
+        <!--  EDITAR PRODUCTO  -->
+        <div class="formulario">
+            <h3>Edita un producto</h3>
+            <div class="inline row">
+                <select id="categoriasEdit">
+                    <option value="armarios">Armarios</option>
+                    <option value="mesas">Mesas</option>
+                    <option value="sillas">Sillas</option>
+                </select>
+                <input id="nombreEdit" type="text" placeholder="nombre" />
+                <input id="precioEdit" type="text" placeholder="Precio" />
+                <input id="fotoEdit" type="text" placeholder="foto" />
+            </div>
+            <div class="row">
+                <textarea id="descripcionEdit" name="textarea" rows="5" cols="50">Descripción del producto</textarea>
+            </div>
+            <button onclick="editProducto()">EDITAR PRODUCTO</button>
+        </div>
+
+        <!--  ELIMINAR PRODUCTO  -->
+        <div class="formulario">
+            <h3>Elimina un producto</h3>
+            <div class="inline">
+                <input id="nombreBorrar" type="text" placeholder="nombre" />
+                <button onclick="deleteProducto()">ELIMINA PRODUCTO</button>
+            </div>
+        </div>
+
+        <diV id="resultado"></diV>
+    </main>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
